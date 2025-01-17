@@ -1,0 +1,89 @@
+.dashboard {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    z-index: 3000;
+}
+
+/* styling he sidebar */
+.dashboard .sidebar {
+    width: 18%;
+}
+
+/* styling the main section */
+.dashboard .main {
+    width: 82%;
+    height: 100vh;
+    position: relative;
+    overflow-x:scroll;
+    background-color: rgb(41, 46, 61);
+}
+
+.floating_button{
+    position: absolute;
+    z-index: 3000;
+    bottom:70px;
+    background-color: rgb(58, 59, 85);
+    right:30px;
+    width:70px;
+    height:50px;
+    color:var(--color-background);
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    border:1px solid #fff
+
+}
+
+.floating_button span{
+    font-size: 30px;
+}
+@media screen and (max-width: 1200px) {
+    .dashboard .homeScreen .timeline {
+        width: 60%;
+    }
+    .dashboard .homeScreen .rightBar {
+        width: 40%;
+    }
+}
+
+
+
+@media screen and (max-width: 900px) {
+    /*.sidebar .middleSection span {
+        display: none
+    }*/
+
+    .dashboard .sidebar {
+        width: 10%;
+        background-color: transparent;
+    }
+
+    .dashboard .main {
+        width: 100%;
+        padding:0px
+    }
+
+}
+
+
+
+
+@media screen and (max-width: 651px) {
+
+    .dashboard .sidebar {
+        display: none
+    }
+
+
+    /* styling the main section */
+    .dashboard .main {
+        width: 100%;
+        position: relative;
+    }
+}
+
+
+
+@media screen and (max-width: 520px) {}
