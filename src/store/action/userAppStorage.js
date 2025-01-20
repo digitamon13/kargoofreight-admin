@@ -137,7 +137,7 @@ export const loginAdmin = (data) => {
   let dataObj = data
   return async (dispatch, getState) => {
     try {
-      let response = await fetch(`https://kargoofreight.onrender.com/adminlogin`, {
+      let response = await fetch(`https://kargoofreight.cloud/adminlogin`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -198,7 +198,7 @@ export const signupAdmin = (data) => {
   let dataObj = data
   return async (dispatch, getState) => {
     try {
-      let response = await fetch(`https://kargoofreight.onrender.com/adminsignup`, {
+      let response = await fetch(`https://kargoofreight.cloud/adminsignup`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -275,7 +275,7 @@ export const fetchCossignments = ()=>{
     } = getState().userAuth
 
     try {
-      let response = await fetch(`https://kargoofreight.onrender.com/cosignments`, {
+      let response = await fetch(`https://kargoofreight.cloud/cosignments`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -324,9 +324,9 @@ export const deleteCossignment = (id)=>{
     let {
       token
     } = getState().userAuth
-
+//
     try {
-      let response = await fetch(`https://kargoofreight.onrender.com/cosignments/${id}`, {
+      let response = await fetch(`https://kargoofreight.cloud/cosignments/${id}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
@@ -375,7 +375,7 @@ export const updateCossignment = (data)=>{
       token
     } = getState().userAuth
     try {
-      let response = await fetch(`https://kargoofreight.onrender.com/cosignments/${data._id}`, {
+      let response = await fetch(`https://kargoofreight.cloud/cosignments/${data._id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -426,7 +426,7 @@ export const createCossignment = (data)=>{
     } = getState().userAuth
 
     try {
-      let response = await fetch(`https://kargoofreight.onrender.com/cosignment`, {
+      let response = await fetch(`https://kargoofreight.cloud/cosignment`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -484,7 +484,7 @@ export const fetchHistories = (id)=>{
     } = getState().userAuth
 
     try {
-      let response = await fetch(`https://kargoofreight.onrender.com/histories/${id}`, {
+      let response = await fetch(`https://kargoofreight.cloud/histories/${id}`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -535,7 +535,7 @@ export const deleteHistory = (id)=>{
     } = getState().userAuth
 
     try {
-      let response = await fetch(`https://kargoofreight.onrender.com/history/${id}`, {
+      let response = await fetch(`https://kargoofreight.cloud/history/${id}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
@@ -584,7 +584,7 @@ export const updateHistory = (data)=>{
       token
     } = getState().userAuth
     try {
-      let response = await fetch(`https://kargoofreight.onrender.com/histories/${data._id}`, {
+      let response = await fetch(`https://kargoofreight.cloud/histories/${data._id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -635,7 +635,7 @@ export const createHistory = (data)=>{
     } = getState().userAuth
 
     try {
-      let response = await fetch(`https://kargoofreight.onrender.com/history`, {
+      let response = await fetch(`https://kargoofreight.cloud/history`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -694,7 +694,7 @@ export const updateAdmin = (data)=>{
     } = getState().userAuth
 
     try {
-      let response = await fetch(`https://kargoofreight.onrender.com/admin/${data._id}`, {
+      let response = await fetch(`https://kargoofreight.cloud/admin/${data._id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -743,7 +743,7 @@ export const updateAdmin = (data)=>{
 
 //https://track-admin-backend.onrenderll.com
 
-//https://kargoofreight.onrender.com
+//https://kargoofreight.cloud
 
 export const sendEmail = (data)=>{
   return async (dispatch, getState) => {
@@ -751,7 +751,7 @@ export const sendEmail = (data)=>{
       token
     } = getState().userAuth
     try {
-      let response = await fetch(`https://kargoofreight.onrender.com/sendemail`, {
+      let response = await fetch(`https://kargoofreight.cloud/sendemail`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
