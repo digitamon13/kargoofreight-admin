@@ -18,8 +18,8 @@ const Sidebar = ({status}) => {
         navigate(data)
     }
     /*
-    /histories/:cossignment
-          /histories/:cossignment/:id
+    /histories/cossignments
+          /histories/cossignments/:id
           /history/:cossignment
           /cossignments
           /cossignments/:id
@@ -47,6 +47,11 @@ const Sidebar = ({status}) => {
             title: 'Setting',
             link:'/admin'
         },
+        {
+            icon:'history',
+            title:'history',
+            link:'/histories/cossignments'
+        }
    
     ]
 

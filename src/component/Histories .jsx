@@ -19,9 +19,8 @@ export const AdminHistoriesComponent = ({ status }) => {
     let dispatch = useDispatch()
     let navigate = useNavigate()
 
-    let { cossignment} = useParams()
+    let { id } = useParams()
 
-    let { color } = useSelector(state => state.userAuth)
 
     useEffect(() => {
         fetchAllHistories()
@@ -30,7 +29,7 @@ export const AdminHistoriesComponent = ({ status }) => {
 
     let fetchAllHistories = async () => {
         setIsError(false)
-        let res = await dispatch(fetchHistories(cossignment))
+        let res = await dispatch(fetchHistories(id))
         if (!res.bool) {
             setIsError(true)
             setIsLoading(false)
@@ -43,10 +42,11 @@ export const AdminHistoriesComponent = ({ status }) => {
         setIsLoading(false)
     }
 
-    let editHandler = (id) => {
+    let editHandler = (historyId) => {
         //navigate to the next page
-        navigate(`/histories/${cossignment}/${id}`)
+        navigate(`/histories/${id}/${historyId}`)
     }
+
 
 
     let deleteHandler = async (id) => {
@@ -73,7 +73,7 @@ export const AdminHistoriesComponent = ({ status }) => {
         setIsLoading(true)
         if (e) {
             const newData = filteredHistories.filter((item) => {
-                const itemData = item.location? item.location : '';
+                const itemData = item.location ? item.location : '';
                 const textData = e.target.value.toLowerCase();
                 return itemData.indexOf(textData) > -1;
             })
@@ -99,7 +99,7 @@ export const AdminHistoriesComponent = ({ status }) => {
 
         <div className={styles.timeline} >
 
-           <div className={styles.filter}>
+            <div className={styles.filter}>
                 <div className={styles.searchContainer}>
                     <div className={styles.searchBar}>
                         < input className={styles.input} placeholder='search by location' onChange={searchHandler} />
@@ -115,29 +115,24 @@ export const AdminHistoriesComponent = ({ status }) => {
 
             <div className={styles.tableContainer} >
 
-                
                 <table>
                     <tbody>
                         <tr>
                             <td>
                                 Date
                             </td>
-                            
+
                             <td>
                                 Time
 
                             </td>
-                            <td>
-                                Location
-                            </td>
+
 
                             <td>
                                 Status
                             </td>
 
-                            
-
-                            <td> 
+                            <td>
                                 delete
                             </td>
                             <td>
@@ -147,24 +142,18 @@ export const AdminHistoriesComponent = ({ status }) => {
                         </tr>
 
 
-                        {historyList.map(data => <tr key={data.__cossignment} >
+                        {historyList.map(data => <tr key={data._cossignment} >
                             <td>
                                 {data.date}
                             </td>
-                            
+
                             <td>
                                 {data.time}
-
                             </td>
-                            <td>
-                                {data.location}
-                            </td>
-
+                           
                             <td>
                                 {data.status}
                             </td>
-
-                          
 
                             <td onClick={() => deleteHandler(data._id)}>
                                 <span className='material-icons'> delete</span>
@@ -174,13 +163,7 @@ export const AdminHistoriesComponent = ({ status }) => {
                                 <span className='material-icons'> edit</span>
                             </td>
 
-
-
-
-
-
                         </tr>)}
-
 
                     </tbody>
                 </table>

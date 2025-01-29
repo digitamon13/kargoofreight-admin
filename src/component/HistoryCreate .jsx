@@ -10,6 +10,7 @@ export const AdminHistoryCreateComponent = ({ updateHandler }) => {
     })
 
     let { cossignment } = useParams()
+    console.log(cossignment)
 
     let handleChangeHandler = (e, nameField) => {
         let val = e.target.value

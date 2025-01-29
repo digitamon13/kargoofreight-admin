@@ -25,6 +25,12 @@ let topMenu = [
     title: 'settings',
     link: '/admin'
   },
+  {
+    icon:'history',
+    title:'history',
+    link:'/histories/cossignments'
+}
+
 
 
 

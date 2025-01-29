@@ -9,7 +9,7 @@ import { useSelector } from "react-redux";
 
 
 
-export const AdminCossignmentsComponent = ({ status }) => {
+export const AdminCossignmentsHistoryComponent = ({ status }) => {
     let [isLoading, setIsLoading] = useState(true)
     let [isError, setIsError] = useState(false)
     let [cossignmentList, setCossignmentList] = useState([])
@@ -39,34 +39,11 @@ export const AdminCossignmentsComponent = ({ status }) => {
         setIsLoading(false)
     }
 
-    let editHandler = (id) => {
-        //navigate to the next page
-        navigate(`/cossignments/${id}`)
-    }
 
 
-    let deleteHandler = async (id) => {
-        //delete this specific case from server
-        setIsError(false)
-        let res = await dispatch(deleteCossignment(id))
-        if (!res.bool) {
-            setIsError(true)
-            setIsLoading(false)
-            return
-        }
-
-        //filtering the already list
-
-        let filteredArray = cossignmentList.filter(data => data._id !== id)
-
-        setCossignmentList(filteredArray)
-        setfilteredCossignments(filteredArray)
-        setIsLoading(false)
-
-    }
-
-    let navigateHandler = ()=>{
-        navigate('/cossignment')
+    let navigateHandler = (id)=>{
+        alert(id)
+        navigate(`/histories/${id}`)
     }
 
 
@@ -143,7 +120,7 @@ export const AdminCossignmentsComponent = ({ status }) => {
                         </tr>
 
 
-                        {cossignmentList.map(data => <tr key={data.__id} >
+                        {cossignmentList.map(data => <tr key={data._id} onClick={()=>navigateHandler(data._id)}>
                             <td>
                                 {data.carrier_reference_no}
                             </td>
@@ -154,15 +131,7 @@ export const AdminCossignmentsComponent = ({ status }) => {
                             <td>
                                 {data.receiver_email}
                             </td>
-
-                            <td onClick={() => deleteHandler(data._id)} className={styles.click}>
-                                 delete
-                            </td>
-
-                            <td onClick={() => editHandler(data._id)} className={styles.click}>
-                                edit
-                            </td>
-
+                            
                         </tr>)}
 
 

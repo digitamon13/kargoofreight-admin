@@ -14,12 +14,14 @@ const AdminCossignmentScreen = ({status}) => {
     let [isLoading, setIsLoading] = useState(false)
     let [isError,setIsError] = useState(false)
     let navigate = useNavigate()
+    let {id} = useParams()
 
 
-    let { cossignment } = useParams()
+
     
     let handleNavigation = ()=>{
-        navigate(`/history/${cossignment}`)
+  
+        navigate(`/history/${id}`)
     }
 
     let showmenuHandler = () => {
@@ -47,6 +49,7 @@ const AdminCossignmentScreen = ({status}) => {
                 <AdminHistoriesComponent status={status}/>
             </div>
             <div className={styles.floating_button} onClick={handleNavigation}><span class='material-icons'>add</span></div>
+           
         </div>
     </>
     )

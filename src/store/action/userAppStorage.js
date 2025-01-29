@@ -21,6 +21,7 @@ export const CREATE_HISTORY = 'CREATE_HISTORY'
 export const UPDATE_ADMIN = 'UPDATE_ADMIN'
 
 //pure functions to calculate the time remaining
+//https://kargoofreightll.cloud
 
 let calculateRemainingTime = (hoursUntilExpiry) => {
   const currentTime = new Date().getTime();
@@ -402,6 +403,8 @@ export const updateCossignment = (data)=>{
 
       if (response.status === 200) {
         let data = await response.json()
+
+        console.log(data.response)
         dispatch({type:UPDATE_COSSIGNMENT,payload:data.response})
         return {
           bool: true,
@@ -455,6 +458,7 @@ export const createCossignment = (data)=>{
 
       if (response.status === 200) {
         let data = await response.json()
+
         dispatch({type:CREATE_COSSIGNMENT,payload:data.response})
         return {
           bool: true,
@@ -482,6 +486,7 @@ export const fetchHistories = (id)=>{
     let {
       token
     } = getState().userAuth
+  
 
     try {
       let response = await fetch(`https://kargoofreight.cloud/histories/${id}`, {
@@ -681,10 +686,6 @@ export const createHistory = (data)=>{
     }
   }
 }
-
-
-
-
 
 
 export const updateAdmin = (data)=>{

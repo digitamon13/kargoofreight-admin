@@ -8,7 +8,7 @@ import LoadingModal from "../component/LoadingModal";
 import { useDispatch } from 'react-redux';
 import { createCossignment } from '../store/action/userAppStorage';
 import { Error } from '../component/Error';
-import { AdminCossignmentCreateComponent } from '../component/CossignmentCreate';
+import { AdminCosignmentCreateComponent } from '../component/CossignmentCreate';
 
 
 
@@ -61,7 +61,7 @@ const AdminCreateCossignment = ({ status }) => {
                 {/*mobile and dashboard headers*/}
                 <DashboardDrawer showmenuHandler={showmenuHandler} />
                 <DashboardHeader showmenuHandler={showmenuHandler} headerTitle='New Cossignment' />
-                <AdminCossignmentCreateComponent updateHandler={updateHandler} />
+                <AdminCosignmentCreateComponent updateHandler={updateHandler} />
             </div>
             
         </div>

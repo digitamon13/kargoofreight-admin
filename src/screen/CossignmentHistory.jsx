@@ -2,24 +2,25 @@ import React, { useState } from 'react';
 import styles from './Home.module.css';
 import DashboardHeader from '../component/dashboardNav';
 import DashboardDrawer from '../component/Drawer';
+
 import Sidebar from '../component/sidebar';
-import { useNavigate} from 'react-router-dom';
 import LoadingModal from "../component/LoadingModal";
-import { useDispatch } from 'react-redux';
-import {  updateHistory } from '../store/action/userAppStorage';
+import { AdminCossignmentsHistoryComponent } from '../component/AdminCossignmentsHistoryComponent';
 import { Error } from '../component/Error';
-import {  AdminHistoryEditComponent} from '../component/HistoryEdit ';
+import { useNavigate } from 'react-router-dom';
 
 
-
-
-const AdminEditCosignment = ({ status }) => {
+const AdminCossignmentHistory = ({status}) => {
     //tradeModal and transfer modal
-    let [isError, setIsError] = useState(false)
     let [isLoading, setIsLoading] = useState(false)
-    let dispatch = useDispatch()
+    let [isError,setIsError] = useState(false)
     let navigate = useNavigate()
+    
+    let handleNavigation = ()=>{
+        navigate('/cossignment')
+    }
 
+   
 
     let showmenuHandler = () => {
         let drawer = document.querySelector('.drawerCon')
@@ -27,26 +28,8 @@ const AdminEditCosignment = ({ status }) => {
     }
 
 
-
-    let updateHandler = async (data) => {
-        setIsLoading(true)
-        let res = await dispatch(updateHistory(data))
-        if (!res.bool) {
-            setIsError(true)
-            setIsLoading(false)
-            return
-        }
-        setIsLoading(false)
-        navigate('/cossignments')
-
-    }
-
-  
-
-
-
-    if (isError) {
-        return <Error />
+    if(isError){
+        return <Error/>
     }
 
 
@@ -54,18 +37,20 @@ const AdminEditCosignment = ({ status }) => {
         {isLoading && <LoadingModal />}
         <div className={styles.dashboard}>
             <div className={styles.sidebar}>
-                <Sidebar status='Cosignments' />
+                <Sidebar status='Cossignments' />
             </div>
 
             <div className={styles.main}>
                 {/*mobile and dashboard headers*/}
                 <DashboardDrawer showmenuHandler={showmenuHandler} />
-                <DashboardHeader showmenuHandler={showmenuHandler} headerTitle='Edit Location' />
-                <AdminHistoryEditComponent updateHandler={updateHandler} />
+                <DashboardHeader showmenuHandler={showmenuHandler}  headerTitle='Cossignments' />
+                <AdminCossignmentsHistoryComponent status={status}/>
             </div>
+          
+            
         </div>
     </>
     )
 }
 
-export default AdminEditCosignment
+export default AdminCossignmentHistory

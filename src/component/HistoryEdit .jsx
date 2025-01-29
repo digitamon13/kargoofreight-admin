@@ -4,11 +4,11 @@ import { useSelector } from "react-redux";
 import { useParams } from 'react-router-dom';
 
 
-export const AdminHistoryEditComponent = ({ updateHandler}) => {
+export const AdminHistoryEditComponent = ({ updateHandler }) => {
     let [isData, setIsData] = useState(null)
     let { color, historiesList } = useSelector(state => state.userAuth)
 
-    let { cossignment,id } = useParams()
+    let { cossignment, id } = useParams()
 
     let handleChangeHandler = (e, nameField) => {
         let val = e.target.value
@@ -50,104 +50,103 @@ export const AdminHistoryEditComponent = ({ updateHandler}) => {
 
             <div className={styles.timeline} >
 
-           {isData && <form className={styles.editForm} onSubmit={submitHandler}>
-                   
-                   <div className={styles.inputCards}>
-                       <label>
-                           Date
-                       </label>
+                {isData && <form className={styles.editForm} onSubmit={submitHandler}>
 
-                       <input value={isData.date} onChange={(e) => handleChangeHandler(e, 'date')} type='date' />
-                   </div>
+                    <div className={styles.inputCards}>
+                        <label>
+                            Date
+                        </label>
 
-                   <div className={styles.inputCards}>
-                       <label>
-                           Time
-                       </label>
+                        <input value={isData.date} onChange={(e) => handleChangeHandler(e, 'date')} type='text' />
+                    </div>
 
-                       <input value={isData.time} onChange={(e) => handleChangeHandler(e, 'time')} type='time' />
-                   </div>
+                    <div className={styles.inputCards}>
+                        <label>
+                            Time
+                        </label>
 
-                   <div className={styles.inputCards}>
-                       <label>
-                           Location
-                       </label>
+                        <input value={isData.time} onChange={(e) => handleChangeHandler(e, 'time')} type='time' />
+                    </div>
 
-                       <input value={isData.location} onChange={(e) => handleChangeHandler(e, 'location')} type='text' />
-                   </div>
+                    <div className={styles.inputCards}>
+                        <label>
+                            Location
+                        </label>
 
-                   <div className={styles.inputCards}>
-                       <label>
-                           Lattitude
-                       </label>
+                        <input value={isData.location} onChange={(e) => handleChangeHandler(e, 'location')} type='text' />
+                    </div>
 
-                       <input value={isData.lattitude} onChange={(e) => handleChangeHandler(e, 'lattitude')} type='number' />
-                   </div>
+                    <div className={styles.inputCards}>
+                        <label>
+                            Lattitude
+                        </label>
 
-                   <div className={styles.inputCards}>
-                       <label>
-                           Longitude
-                       </label>
+                        <input value={isData.lattitude} onChange={(e) => handleChangeHandler(e, 'lattitude')} type='number' />
+                    </div>
 
-                       <input value={isData.longitude} onChange={(e) => handleChangeHandler(e, 'longitude')} type='number' />
-                   </div>
+                    <div className={styles.inputCards}>
+                        <label>
+                            Longitude
+                        </label>
 
-                   <div className={styles.inputCards}>
-                       <label>
-                           UpdatedBy
-                       </label>
+                        <input value={isData.longitude} onChange={(e) => handleChangeHandler(e, 'longitude')} type='number' />
+                    </div>
 
-                       <input value={isData.UploadedBy} onChange={(e) => handleChangeHandler(e, 'UploadedBy')} type='text' placeholder='Admin' />
-                   </div>
+                    <div className={styles.inputCards}>
+                        <label>
+                            UpdatedBy
+                        </label>
 
+                        <input value={isData.updatedBy} onChange={(e) => handleChangeHandler(e, 'updatedBy')} type='text' placeholder='Admin' />
+                    </div>
 
-                   <div className={styles.inputCards}>
-                       <label>
-                       Remarks
-                       </label>
+                    <div className={styles.inputCards}>
+                        <label>
+                            Remarks
+                        </label>
 
-                       <input value={isData.Remarks} onChange={(e) => handleChangeHandler(e, 'Remarks')} type='text' />
-                   </div>
+                        <input value={isData.remarks} onChange={(e) => handleChangeHandler(e, 'remarks')} type='text' />
+                    </div>
 
-                   <div className={styles.inputCards}>
-                       <label>
-                           Status
-                       </label>
-                       <select value={isData.status} onChange={(e) => handleChangeHandler(e, 'status')}>
-                           <option >
-                               Pending
+                    <div className={styles.inputCards}>
+                        <label>
+                            Status
+                        </label>
+                        <select value={isData.status} onChange={(e) => handleChangeHandler(e, 'status')}>
+                            <option >
+                                On hold
 
-                           </option>
-                           <option>
-                               Picked Up
+                            </option>
+                            <option>
+                                Picked Up
 
-                           </option>
-                           <option>
-                               In Transit
+                            </option>
+                            <option>
+                                In Transit
 
-                           </option>
-                           <option>
-                               Cancelled
+                            </option>
+                            <option>
+                                Cancelled
 
-                           </option>
-                           <option>
-                               Delivered
+                            </option>
+                            <option>
+                                Delivered
 
-                           </option>
-                           <option>
-                               Returned
+                            </option>
+                            <option>
+                                Returned
 
-                           </option>
+                            </option>
 
-                       </select>
-                   </div>
+                        </select>
+                    </div>
 
-                   <div className={styles.buttonContainer} >
-                       <button >save</button>
-                   </div>
-               </form>
-        }    
-        </div>
+                    <div className={styles.buttonContainer} >
+                        <button >save</button>
+                    </div>
+                </form>
+                }
+            </div>
 
 
         </div></>)
