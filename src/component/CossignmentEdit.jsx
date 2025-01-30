@@ -171,7 +171,7 @@ export const AdminCossignmentEditComponent = ({ updateHandler, onLoader }) => {
                             <input
                                 value={isData.weight}
                                 onChange={(e) => handleChangeHandler(e, "weight")}
-                                type="number"
+                                type="text"
                             />
                         </div>
 
@@ -254,11 +254,12 @@ export const AdminCossignmentEditComponent = ({ updateHandler, onLoader }) => {
                                 onChange={(e) => handleChangeHandler(e, "carrier")}
                             >
                                 <option value="">Select Carrier</option>
+                                <option value="Kargo">Kargo</option>
                                 <option value="DHL">DHL</option>
                                 <option value="UPS">UPS</option>
                                 <option value="FedEx">FedEx</option>
                                 <option value="USPS">USPS</option>
-                                <option value="Other">Kargo</option>
+                                
                             </select>
                         </div>
 
