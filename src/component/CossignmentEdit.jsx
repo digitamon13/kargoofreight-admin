@@ -204,6 +204,7 @@ export const AdminCossignmentEditComponent = ({ updateHandler, onLoader }) => {
                                 <option value="Freight">Freight</option>
                                 <option value="Envelope">Envelope</option>
                                 <option value="Box">Box</option>
+                                <option value="Machines">Machines</option>
                                 <option value="Pallet">Pallet</option>
                                 <option value="Other">Other</option>
                             </select>
@@ -388,6 +389,7 @@ export const AdminCossignmentEditComponent = ({ updateHandler, onLoader }) => {
                             >
                                 <option value="Pending">Pending</option>
                                 <option value="In Transit">In Transit</option>
+                                <option value="Out For Delivery">Out For Delivery</option>
                                 <option value="Delivered">Delivered</option>
                                 <option value="Cancelled">Cancelled</option>
                                 <option value="Returned">Returned</option>
