@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 
 export const AdminHistoryCreateComponent = ({ updateHandler }) => {
     let [isData, setIsData] = useState({
-        status:'Pending',
+        status:'On Hold',
         UploadedBy:'Admin'
     })
 
@@ -102,7 +102,7 @@ export const AdminHistoryCreateComponent = ({ updateHandler }) => {
                         </label>
                         <select value={isData.status} onChange={(e) => handleChangeHandler(e, 'status')}>
                             <option >
-                                Pending
+                               On Hold
 
                             </option>
                             <option>

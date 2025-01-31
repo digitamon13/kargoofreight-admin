@@ -388,7 +388,7 @@ export const AdminCossignmentEditComponent = ({ updateHandler, onLoader }) => {
                                 value={isData.status}
                                 onChange={(e) => handleChangeHandler(e, "status")}
                             >
-                                <option value="Pending">Pending</option>
+                                <option value="On Hold">On Hold</option>
                                 <option value="In Transit">In Transit</option>
                                 <option value="Out For Delivery">Out For Delivery</option>
                                 <option value="Delivered">Delivered</option>

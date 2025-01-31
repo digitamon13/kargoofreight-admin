@@ -200,7 +200,7 @@ export const AdminCosignmentCreateComponent = ({ updateHandler }) => {
               onChange={(e) => handleChangeHandler(e, "status")}
             >
               <option value="">Select Status</option>
-              <option value="Pending">Pending</option>
+              <option value="On Hold">On Hold</option>
               <option value="In Transit">In Transit</option>
 
               <option value="Out For Delivery">Out For Delivery</option>
