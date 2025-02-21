@@ -117,6 +117,7 @@ export const AdminHistoryEditComponent = ({ updateHandler }) => {
                                 On hold
 
                             </option>
+                            <option>Out For Delivery</option>
                             <option>
                                 Picked Up
 

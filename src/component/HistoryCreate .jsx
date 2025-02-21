@@ -5,8 +5,8 @@ import { useParams } from 'react-router-dom';
 
 export const AdminHistoryCreateComponent = ({ updateHandler }) => {
     let [isData, setIsData] = useState({
-        status:'On Hold',
-        UploadedBy:'Admin'
+        status: 'On Hold',
+        UploadedBy: 'Admin'
     })
 
     let { cossignment } = useParams()
@@ -38,7 +38,7 @@ export const AdminHistoryCreateComponent = ({ updateHandler }) => {
 
             <div className={styles.timeline} >
                 <form className={styles.editForm} onSubmit={submitHandler}>
-                   
+
                     <div className={styles.inputCards}>
                         <label>
                             Date
@@ -90,7 +90,7 @@ export const AdminHistoryCreateComponent = ({ updateHandler }) => {
 
                     <div className={styles.inputCards}>
                         <label>
-                        Remarks
+                            Remarks
                         </label>
 
                         <input value={isData.Remarks} onChange={(e) => handleChangeHandler(e, 'Remarks')} type='text' />
@@ -102,7 +102,7 @@ export const AdminHistoryCreateComponent = ({ updateHandler }) => {
                         </label>
                         <select value={isData.status} onChange={(e) => handleChangeHandler(e, 'status')}>
                             <option >
-                               On Hold
+                                On Hold
 
                             </option>
                             <option>
@@ -124,6 +124,9 @@ export const AdminHistoryCreateComponent = ({ updateHandler }) => {
                             <option>
                                 Returned
 
+                            </option>
+                            <option>
+                                Out For Delivery
                             </option>
 
                         </select>
